@@ -352,12 +352,12 @@ def main():
     try:
         _ = predict_missing_links(
             ttl_file=filepath,
-            model_path="public/models/link_predictor_model.pt",
+            model_path="models/link_predictor_model.pt",
             top_k=15,
         )
         _ = predict_node_classes(
             ttl_file=filepath,
-            model_path="public/models/node_classifier_model.pt",
+            model_path="models/node_classifier_model.pt",
         )
     except Exception as e:
         print(f"⚠️ Failed to process! Error: {e}")
