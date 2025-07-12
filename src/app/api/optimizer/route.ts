@@ -22,6 +22,9 @@ export async function POST(request: Request) {
     tempFilePath = path.join(tmpDir, fileName);
     await writeFile(tempFilePath, ttlContent, 'utf8');
 
+    console.log(`Temporary file created at: ${tempFilePath}`);
+    console.log(`Starting Python script: ${process.cwd()}`);
+    
     const scriptPath = path.join(process.cwd(), 'scripts', 'optimizer.py');
 
     const result = await new Promise<{ stdout: string; stderr: string }>(
