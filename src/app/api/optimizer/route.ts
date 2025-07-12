@@ -22,7 +22,7 @@ export async function POST(request: Request) {
     tempFilePath = path.join(tmpDir, fileName);
     await writeFile(tempFilePath, ttlContent, 'utf8');
 
-    const scriptPath = path.join(process.cwd(), 'scripts', 'optimizer.py');
+    const scriptPath = path.join(process.cwd(), 'public/scripts', 'optimizer.py');
 
     const result = await new Promise<{ stdout: string; stderr: string }>(
       async (resolve, reject) => {
